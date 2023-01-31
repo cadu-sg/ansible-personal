@@ -1,0 +1,13 @@
+---
+- name: Configurar
+  hosts: localhost
+  remote_user: root
+
+  tasks:
+    - name: Instalar pacotes apt
+      ansible.builtin.import_tasks:
+        file: tasks/pacotes_apt.yml
+
+    - name: Configurar shell
+      ansible.builtin.import_tasks:
+        file: tasks/shell.yml
