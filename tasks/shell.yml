@@ -14,28 +14,28 @@
 - name: Instalar antigen
   ansible.builtin.get_url:
     url: https://git.io/antigen
-    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/antigen.zsh"
+    dest: "{{ home }}/antigen.zsh"
     mode: 0664
-    owner: cadu
-    group: cadu
+    owner: "{{ name }}"
+    group: "{{ name }}"
 
 - name: Copiar arquivo de configuração do Zsh
   ansible.builtin.copy:
     src: files/zshrc
-    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.zshrc"
+    dest: "{{ home }}/.zshrc"
     mode: 0644
-    owner: cadu
-    group: cadu
+    owner: "{{ name }}"
+    group: "{{ name }}"
 
 - name: Copiar arquivo de configuração do Powerlevel10k
   ansible.builtin.copy:
     src: files/p10k.zsh
-    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.p10k.zsh"
+    dest: "{{ home }}/.p10k.zsh"
     mode: 0644
-    owner: cadu
-    group: cadu
+    owner: "{{ name }}"
+    group: "{{ name }}"
 
 - name: Mudar shell de login para Zsh
   ansible.builtin.user:
-    name: cadu
+    name: "{{ name }}"
     shell: /usr/bin/zsh

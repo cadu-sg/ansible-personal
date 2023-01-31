@@ -1,8 +1,9 @@
 ---
-- name: Configurar
+- name: Configurar computador pessoal
   hosts: localhost
-  remote_user: root
-
+  vars:
+    user: cadu
+    home: "/home/{{ user }}"
   tasks:
     - name: Instalar pacotes apt
       ansible.builtin.import_tasks:

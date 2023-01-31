@@ -1,7 +1,8 @@
 ---
-- name: Atualizar repositórios (apt-get update)
+- name: Atualizar repositórios (apt-get update) se a ultima atualização foi a mais de 1h
   ansible.builtin.apt:
     update_cache: true
+    cache_valid_time: 3600
 
 - name: Instalar Discord
   ansible.builtin.apt:
