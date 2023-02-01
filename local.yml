@@ -3,6 +3,7 @@
   hosts: localhost
   vars:
     user: cadu
+    group: cadu
     home: "/home/{{ user }}"
   tasks:
     - name: Instalar pacotes apt

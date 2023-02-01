@@ -1,5 +1,5 @@
 ---
-- name: Atualizar repositórios (apt-get update) se a ultima atualização foi a mais de 1h
+- name: Atualizar repositórios (apt-get update) se a última atualização foi a mais de 1h
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3600
@@ -18,8 +18,8 @@
 
 - name: Adicionar repositório qBittorrent
   ansible.builtin.apt_repository:
+    repo: 'ppa:qbittorrent-team/qbittorrent-stable'
     codename: jammy
-    repo: ppa:qbittorrent-team/qbittorrent-stable
 
 - name: Instalar dependência para repositório Neovim
   ansible.builtin.apt:

@@ -16,26 +16,26 @@
     url: https://git.io/antigen
     dest: "{{ home }}/antigen.zsh"
     mode: 0664
-    owner: "{{ name }}"
-    group: "{{ name }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
 
 - name: Copiar arquivo de configuração do Zsh
   ansible.builtin.copy:
     src: files/zshrc
     dest: "{{ home }}/.zshrc"
     mode: 0644
-    owner: "{{ name }}"
-    group: "{{ name }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
 
 - name: Copiar arquivo de configuração do Powerlevel10k
   ansible.builtin.copy:
     src: files/p10k.zsh
     dest: "{{ home }}/.p10k.zsh"
     mode: 0644
-    owner: "{{ name }}"
-    group: "{{ name }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
 
 - name: Mudar shell de login para Zsh
   ansible.builtin.user:
-    name: "{{ name }}"
+    name: "{{ user }}"
     shell: /usr/bin/zsh
