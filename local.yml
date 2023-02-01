@@ -1,6 +1,7 @@
 ---
 - name: Configurar computador pessoal
-  hosts: localhost
+  hosts: 127.0.0.1
+  connection: local
   vars:
     user: cadu
     group: cadu
