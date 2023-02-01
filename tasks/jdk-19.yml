@@ -9,7 +9,6 @@
     name: java
     path: /usr/lib/jvm/jdk-19/bin/java
     priority: 1900
-    state: auto
 
 - name: Update alternatives javac
   community.general.alternatives:
@@ -17,7 +16,6 @@
     name: javac
     path: /usr/lib/jvm/jdk-19/bin/javac
     priority: 1900
-    state: auto
 
 - name: Update alternatives jar
   community.general.alternatives:
@@ -25,7 +23,6 @@
     name: jar
     path: /usr/lib/jvm/jdk-19/bin/jar
     priority: 1900
-    state: auto
 
 - name: Copiar arquivo de configuração para variável de ambiente JAVA_HOME
   ansible.builtin.copy:
