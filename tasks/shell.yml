@@ -21,7 +21,7 @@
 
 - name: Copiar arquivo de configuração do Zsh
   ansible.builtin.copy:
-    src: files/zshrc
+    src: files/.zshrc
     dest: "{{ home }}/.zshrc"
     mode: 0644
     owner: "{{ user }}"

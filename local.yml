@@ -13,3 +13,7 @@
     - name: Configurar shell
       ansible.builtin.import_tasks:
         file: tasks/shell.yml
+
+    - name: Instalar JDK 17
+      ansible.builtin.import_tasks:
+        file: tasks/jdk-17.yml

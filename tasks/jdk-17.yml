@@ -1,0 +1,33 @@
+---
+- name: Instalar JDK 17
+  ansible.builtin.apt:
+    deb: https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
+
+- name: Update alternatives java
+  community.general.alternatives:
+    link: /usr/bin/java
+    name: java
+    path: /usr/lib/jvm/jdk-17/bin/java
+    priority: 1700
+
+- name: Update alternatives javac
+  community.general.alternatives:
+    link: /usr/bin/javac
+    name: javac
+    path: /usr/lib/jvm/jdk-17/bin/javac
+    priority: 1700
+
+- name: Update alternatives jar
+  community.general.alternatives:
+    link: /usr/bin/jar
+    name: jar
+    path: /usr/lib/jvm/jdk-17/bin/jar
+    priority: 1700
+
+- name: Copiar arquivo de configuração para variável de ambiente JAVA_HOME
+  ansible.builtin.copy:
+    src: files/jdk-17.sh
+    dest: /etc/profile.d/jdk.sh
+    mode: 0644
+    owner: root
+    group: root
