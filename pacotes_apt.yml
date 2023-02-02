@@ -1,0 +1,8 @@
+---
+- name: "Playbook: instalar pacotes APT"
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: "Importar tasks: instalar pacotes APT"
+      ansible.builtin.import_tasks:
+        file: tasks/pacotes_apt.yml

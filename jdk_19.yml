@@ -1,0 +1,8 @@
+---
+- name: "Playbook: instalar e configurar JDK 19"
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: "Importar tasks: instalar e configurar JDK 19"
+      ansible.builtin.import_tasks:
+        file: tasks/jdk_19.yml

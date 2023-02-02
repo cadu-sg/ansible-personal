@@ -1,0 +1,12 @@
+---
+- name: "Playbook: configurar shell"
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    user: cadu
+    group: cadu
+    home: "/home/{{ user }}"
+  tasks:
+    - name: "Importar tasks: configurar shell"
+      ansible.builtin.import_tasks:
+        file: tasks/shell.yml
