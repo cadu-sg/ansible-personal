@@ -39,4 +39,4 @@
   ansible.builtin.user:
     name: "{{ user }}"
     shell: /usr/bin/zsh
-    ignore_errors: true
+  ignore_errors: true
