@@ -1,6 +1,6 @@
 ---
-- name: "Playbook: configurar shell"
-  hosts: 127.0.0.1
+- name: Configurar shell
+  hosts: localhost
   connection: local
   vars:
     user: cadu
