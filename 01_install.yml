@@ -1,0 +1,16 @@
+---
+- name: 'Play — Install applications'
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install packages
+      ansible.builtin.import_tasks:
+        file: 01_install/apt_packages.yml
+
+    - name: Install Brave Browser
+      ansible.builtin.import_tasks:
+        file: 01_install/brave_browser.yml
+
+    - name: Install asdf
+      ansible.builtin.import_tasks:
+        file: 01_install/asdf.yml

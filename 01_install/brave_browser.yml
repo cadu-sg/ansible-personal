@@ -1,0 +1,22 @@
+---
+- name: Install dependencies for Brave
+  ansible.builtin.apt:
+    name:
+      - curl
+    state: present
+
+- name: Set up keyring
+  ansible.builtin.shell:
+    cmd: curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+- name: Set up repository
+  ansible.builtin.shell:
+    cmd: echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+
+- name: Update package index (apt-get update)
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install Brave
+  ansible.builtin.apt:
+    name: brave-browser
